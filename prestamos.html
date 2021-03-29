@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemon Bank</title>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  
+
+</head>
+
+<body>
+
+    <div class="container-fluid d-flex flex-row flex-wrap">
+
+        <div class="side-menu">
+            <h2 class="lemon-color text-center mb-3">Lemon Bank</h2>
+
+            <div class="content-nav">
+                <ul class="nav nav-sidebar d-flex flex-column">
+                    <li class="active">
+                        <a id=navmenu class=onboarding href="../../index.html">
+                            Inicio
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Cuentas
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Tarjetas
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Transferencias
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Pagos de servicios
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Compra/Venta de Dólares
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Inversiones
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a id="aprestamo" href="/prestamos.html">
+                            Préstamos
+
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            Seguros
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="detalle">
+            <h2 class="lemon-color">PRÉSTAMOS</h2>
+
+            <div class="card mb-3">Tus préstamos
+                <p id="prestamos"></p>
+            </div>
+
+            <div class="card bg-light mb-3">Simulaciones
+
+                <div id="prestamo-tradicional" class="botonera bg-light">
+
+                    <div class="bg-light d-flex flex-row d-flex d-flex align-items-end justify-content-center">
+                        <div class="d-flex flex-column m-3">
+                            <label for="monto">Ingrese el monto a solicitar:</label>
+                            <input class="text-center" type="number" id="monto" name="monto" value=10000 min=10000
+                                max=250000>
+                        </div>
+                        <div class="d-flex flex-column m-3">
+                            <label for="cuotas">Ingrese el número de cuotas:</label>
+                            <input class="text-center" type="number" id="cuotas" name="cuotas" value=3 min=3 max=36>
+                        </div>
+                        <div class="m-3">
+                            <input id="btnSimular" type="button" class="bg-danger px-3" value="Simular">
+                        </div>
+                    </div>
+
+                    <div id="lista-simulaciones"></div>
+                    <div id="lista-opciones"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- CUSTOM JS -->
+    <script src="main.js" type="module"></script>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- BOOSTRAP 4! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+
+</body>
+
+</html>

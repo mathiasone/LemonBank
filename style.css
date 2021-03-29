@@ -1,0 +1,48 @@
+/* ------------------------------------------------ GLOBAL ------------------------------------------------ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* MENU*/
+.lemon-color{
+  color: #fff700;
+  -webkit-text-stroke: 1px grey;
+ 
+}
+
+.side-menu{
+  width: 15%;
+  /* border: 1px black solid; */
+  margin: 1rem;
+  
+}
+
+.detalle{
+  width: 70%;
+  /* border: 1px black solid; */
+  margin: 1rem;
+  text-align: center;
+}
+
+.card{
+  border: 1px black solid;
+}
+
+ul li a{
+  text-decoration: none;
+  color:lightgrey;
+}
+
+#aprestamo{
+  color: black;
+}
+
+ul{
+  list-style: none;
+}
+
+/* prestamos.html */
+
+
