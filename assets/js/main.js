@@ -31,11 +31,17 @@ PrestamosJSON.push(JSON2);
 
 localStorage.setItem("lista", JSON.stringify(PrestamosJSON));
 
+
 // EVENTOS
-window.addEventListener('DOMContentLoaded', misFunciones.cargarPrestamos, false);
-document.getElementById("btnSimular").addEventListener("click", btnSimular);
-document.getElementById("monto").addEventListener("keypress", enterMonto);
-document.getElementById("cuotas").addEventListener("keypress", enterCuotas);
+
+$(document).ready(misFunciones.cargarPrestamos);
+// window.addEventListener('DOMContentLoaded', misFunciones.cargarPrestamos, false);
+$("#btnSimular").click(btnSimular);
+// document.getElementById("btnSimular").addEventListener("click", btnSimular);
+$("#monto").keypress(enterMonto);
+// document.getElementById("monto").addEventListener("keypress", enterMonto);
+$("#cuotas").keypress(enterCuotas);
+// document.getElementById("cuotas").addEventListener("keypress", enterCuotas);
 
 function enterMonto(e){
     if(e.wich == 13 || e.keyCode == 13 ){

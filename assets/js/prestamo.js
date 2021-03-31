@@ -16,6 +16,7 @@ export default class Prestamo{
 
     imprimir(){
         document.getElementById("prestamos").innerHTML = `${document.getElementById("prestamos").innerHTML} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
+        // $(document).html = `${document.getElementById("prestamos").innerHTML} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
     }
 }
 
