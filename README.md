@@ -1,11 +1,12 @@
 <h1 align="center">Hi 👋, I'm Matías Ferreyra</h1>
+<h3 align="center">This is my javascript project</h3>
 <h3 align="center">I'm looking forward to working as fullstack developer</h3>
 
 - 🌱 I’m currently learning **Fullstack developer career at CoderHouse**
 
 - 👨‍💻 All of my projects are available at [https://github.com/mathiasone](https://github.com/mathiasone)
 
-- 💬 Ask me about **Siebel, PLSQL, HTML, CSS, Boostrap, Javascript**
+- 💬 Ask me about **HTML, CSS, Boostrap, Javascript, Oracle Siebel CRM, PLSQL**
 
 - 📫 How to reach me **m.ferreyra1985@gmail.com**
 
