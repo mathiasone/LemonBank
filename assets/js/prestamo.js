@@ -15,8 +15,8 @@ export default class Prestamo{
     }
 
     imprimir(){
-        document.getElementById("prestamos").innerHTML = `${document.getElementById("prestamos").innerHTML} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
-        // $(document).html = `${document.getElementById("prestamos").innerHTML} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
+        //document.getElementById("prestamos").innerHTML = `${document.getElementById("prestamos").innerHTML} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
+        $("#simulaciones").html = `${$("#simulaciones").html} Para saldar su deuda deberá pagar123 ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
     }
 }
 

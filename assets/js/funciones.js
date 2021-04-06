@@ -17,15 +17,17 @@ export function simularOpciones(m, min, max){
         i = i*2;
     }
 
-    if(document.getElementById("opciones") == null){
-        var newPar02 = document.createElement("p");
+    if( $("#opciones").length === 0){
+        var newPar02 = document.createElement("div");
         newPar02.setAttribute("id", "opciones")
+        $("#lista-opciones").append(newPar02);
     }else{
-        newPar02 = document.getElementById("opciones");
-        newPar02.innerHTML = "";
+        // newPar02 = document.getElementById("opciones");
+        // newPar02.innerHTML = "";
+        $("#opciones").html("");
     }     
  
-    pso.forEach(e => e.imprimir("lista-opciones", newPar02));
+    pso.forEach(e => e.imprimir("opciones"));
 
 }
 
@@ -37,7 +39,6 @@ export function cargarPrestamos(){
     for (let p of listaJSON)
         prestamosActivos.push(new Prestamo (p));    
     
-    console.log(prestamosActivos);
     prestamosActivos.forEach(e => e.imprimir());
 
 }
