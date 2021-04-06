@@ -38,7 +38,7 @@ export function cargarPrestamos(){
 
     for (let p of listaJSON)
         prestamosActivos.push(new Prestamo (p));    
-    
+
     prestamosActivos.forEach(e => e.imprimir());
 
 }

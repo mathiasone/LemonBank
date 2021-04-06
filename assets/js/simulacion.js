@@ -99,7 +99,7 @@ export default class Simulacion{
             // }            
 
             if($("#simulaciones").length === 0){
-                $("#lista-simulaciones").append("<h2>Simulación ABC</h2>");
+                $("#lista-simulaciones").append("<h2>Simulación</h2>");
                 var newPar01 = document.createElement("div");
                 newPar01.setAttribute("id", "simulaciones");
                 $("#lista-simulaciones").append(newPar01);
