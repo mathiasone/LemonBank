@@ -15,8 +15,9 @@ export default class Prestamo{
     }
 
     imprimir(){
-        //document.getElementById("prestamos").innerHTML = `${document.getElementById("prestamos").innerHTML} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
-        $("#prestamos").html(`${$("#prestamos").html()} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`);
+
+        $("#prestamos").html(`${$("#prestamos").html()} <div class='row bg-light mx-5 fila-p'> <div class='col-4'>$ ${this.monto.toFixed(0)}</div> <div class='col-4'>${this.cuotasPagas}</div> <div class='col-4'>${this.meses}</div> </div>`);
+        
     }
 }
 

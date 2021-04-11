@@ -67,18 +67,13 @@ export default class Simulacion{
                         break;                                 
                 }
                 break;
-
-            //case 'U':        
-            //case 'C':
         }
         
     }
     
     imprimir(p){
 
-        // i.innerHTML = `${i.innerHTML} Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`;
-        // document.getElementById(p).appendChild(i);
-        $("#"+p).append(`Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`);
+         $("#"+p).append(`Para saldar su deuda deberá pagar ${this.meses} cuotas de: $ ${this.montoCuota.toFixed(2)} </br>`);
 
     }
 
@@ -89,28 +84,20 @@ export default class Simulacion{
         if(this.validarMonto() && this.validarMeses()){
             this.calcularinteres();
             this.calcularCuotas();
-            
-            // if(document.getElementById("simulaciones") == null){
-            //     var newPar01 = document.createElement("p");
-            //     newPar01.setAttribute("id", "simulaciones")
-            // }else{
-            //     newPar01 = document.getElementById("simulaciones");
-            //     newPar01.innerHTML = "";
-            // }            
 
             if($("#simulaciones").length === 0){
                 $("#lista-simulaciones").append("<h2>Simulación</h2>");
-                // var newPar01 = document.createElement("div");
-                // newPar01.setAttribute("id", "simulaciones");
-                //$("#lista-simulaciones").append(newPar01);
                 $("#lista-simulaciones").append("<div id='simulaciones'></div>");
             }else{
                 $("#simulaciones").html("");
             }    
 
+            $("#simulaciones").parent().hide();
             this.imprimir("simulaciones");
+            $("#simulaciones").parent().fadeIn(2000);
 
             validaciones = true;
+
         }
         return validaciones;
     }
