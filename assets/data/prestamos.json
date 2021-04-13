@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "tipo": "T",
+        "monto": 10000,
+        "montoTotal": 13500,
+        "montoCuota": 2250,
+        "meses": 6,
+        "cuotasPagas": 4,
+        "activo":true
+    },
+    {
+        "id": 2,
+        "tipo": "T",
+        "monto": 20000,
+        "montoTotal": 27000,
+        "montoCuota": 4500,
+        "meses": 6,
+        "cuotasPagas": 2,
+        "activo":true
+    },
+    {
+        "id": 3,
+        "tipo": "T",
+        "monto": 120000,
+        "montoTotal": 27000,
+        "montoCuota": 4500,
+        "meses": 12,
+        "cuotasPagas": 9,
+        "activo":true
+    },
+    {
+        "id": 4,
+        "tipo": "T",
+        "monto": 200000,
+        "montoTotal": 27000,
+        "montoCuota": 4500,
+        "meses": 24,
+        "cuotasPagas": 15,
+        "activo":true
+    }
+]

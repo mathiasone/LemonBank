@@ -22,15 +22,10 @@ export function simularOpciones(m, min, max){
         newPar02.setAttribute("id", "opciones")
         $("#lista-opciones").append(newPar02);
     }else{
-        // newPar02 = document.getElementById("opciones");
-        // newPar02.innerHTML = "";
         $("#opciones").html("");
     }     
  
     pso.forEach(e => e.imprimir("opciones"));
-
-    //setearEstadoBoton("btnOpciones", true);
-    //$("#btnOpciones").prop("disabled", true);
 }
 
 export function cargarPrestamos(){
@@ -40,20 +35,33 @@ export function cargarPrestamos(){
 
     let prestamosActivos = [];
 
-    let listaJSON = JSON.parse(localStorage.getItem("lista"));
+    console.log("Pre-getJSON");    
+    $.getJSON('../data/prestamos.json', (respuesta, estado) => {
+        if(estado === "success"){
+            for (let p of respuesta){
+                prestamosActivos.push(new Prestamo (p)); 
+            }   
+            
+            $("#prestamos").html(
+                "<div class='row bg-light mx-5 cabecera'>" + 
+                    "<div class='col-4'>Monto otorgado</div>" + 
+                    "<div class='col-4'>Cuotas pagas</div>" +
+                    "<div class='col-4'>Cuotas totales</div>" +
+                "</div>"
+                );
 
-    for (let p of listaJSON)
-        prestamosActivos.push(new Prestamo (p));    
+            prestamosActivos.forEach(e => e.imprimir());    
+                
+            $("#prestamos").hide().slideDown(500, () =>{
+                $(".cabecera").animate({"font-size": "30px"},1500);
+                $(".fila-p").animate({"font-size": "30px"},1500)
+                .animate({"font-size": "16px"},1500);
+            });
 
-    $("#prestamos").html("<div class='row bg-light mx-5 cabecera'> <div class='col-4'>Monto otorgado</div> <div class='col-4'>Cuotas pagas</div> <div class='col-4'>Cuotas totales</div> </div>");
-    prestamosActivos.forEach(e => e.imprimir());
-
-    $("#prestamos").hide().slideDown(1000, () =>{
-        $(".cabecera").animate({"font-size": "40px"},2000);
-        $(".fila-p").animate({"font-size": "40px"},2000)
-        .animate({"font-size": "20px"},2000);
+        }else{
+            console.log("Error en la carga de datos desde ../data/prestamos.json");
+        }
     });
-
 
 }
 

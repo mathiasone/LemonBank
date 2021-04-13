@@ -3,35 +3,6 @@ import Simulacion from './simulacion.js';
 import{mesesMin, mesesMax} from './simulacion.js';
 import * as misFunciones from './funciones.js';
 
-// Datos creado con formato JSON guardados en localstorage
-var JSON1 = {
-    "tipo": "T",
-    "monto": 10000,
-    "montoTotal": 13500,
-    "montoCuota": 2250,
-    "meses": 6,
-    "cuotasPagas": 3,
-    "activo":true
-}
-
-var JSON2 = {
-    "tipo": "T",
-    "monto": 20000,
-    "montoTotal": 27000,
-    "montoCuota": 4500,
-    "meses": 6,
-    "cuotasPagas": 3,
-    "activo":true
-}
-
-
-let PrestamosJSON=[];
-PrestamosJSON.push(JSON1);
-PrestamosJSON.push(JSON2);
-
-localStorage.setItem("lista", JSON.stringify(PrestamosJSON));
-
-
 // EVENTOS
 $(document).ready(misFunciones.cargarPrestamos);
 $("#btnSimular").click(btnSimular);
@@ -40,7 +11,7 @@ $("#monto").keypress(enterMonto);
 $("#cuotas").keypress(enterCuotas);
 $("#monto").change(() =>{$("#btnSimular").prop("disabled", false);
                            $("#btnOpciones").prop("disabled", false);});
-//$("#cuotas").change(enterCuotas);
+
 
 // VALIDACIONES
 function enterMonto(e){
