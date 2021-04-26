@@ -5,6 +5,7 @@ import * as misFunciones from './funciones.js';
 
 // EVENTOS
 $(document).ready(misFunciones.cargarPrestamos);
+// PONER TOODOS LOS EVENTOS DESDE READY (PENDIENTES)
 $("#btnSimular").click(btnSimular);
 $("#btnOpciones").click(btnVerOpciones);
 $("#monto").keypress(enterMonto);
