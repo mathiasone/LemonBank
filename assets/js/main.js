@@ -4,14 +4,28 @@ import{mesesMin, mesesMax} from './simulacion.js';
 import * as misFunciones from './funciones.js';
 
 // EVENTOS
-$(document).ready(misFunciones.cargarPrestamos);
-// PONER TOODOS LOS EVENTOS DESDE READY (PENDIENTES)
-$("#btnSimular").click(btnSimular);
-$("#btnOpciones").click(btnVerOpciones);
-$("#monto").keypress(enterMonto);
-$("#cuotas").keypress(enterCuotas);
-$("#monto").change(() =>{$("#btnSimular").prop("disabled", false);
-                           $("#btnOpciones").prop("disabled", false);});
+//$(document).ready(misFunciones.cargarPrestamos);
+
+// PONER TOODOS LOS EVENTOS DESDE READY (PARA EVITAR ERRORES PORQUE LA PAGINA NO TERMINO DE CARGAR)
+$(document).ready(() => {
+    misFunciones.cargarPrestamos();
+    $("#btnSimular").click(btnSimular);
+    $("#btnOpciones").click(btnVerOpciones);
+    $("#monto").keypress(enterMonto);
+    $("#cuotas").keypress(enterCuotas);
+
+    //si se cambia el monto habilito los botones de nuevo
+    $("#monto").change(() =>{$("#btnSimular").prop("disabled", false);
+                                $("#lista-simulaciones").html("");
+                                $("#lista-opciones").html("");
+                            });
+    //si se cambia los meses habilito los botones de nuevo17
+    $("#cuotas").change(() =>{$("#btnSimular").prop("disabled", false);
+                                $("#lista-simulaciones").html("");
+                                $("#lista-opciones").html("");
+                            });                       
+});
+
 
 
 // VALIDACIONES

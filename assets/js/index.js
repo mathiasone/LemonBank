@@ -10,25 +10,20 @@ function cargarDolar(){
     });
 };
 
-function agregarDolarAlDOM(cot, callback){
+function agregarDolarAlDOM(cot){
         
-    $("#index-inicio").append(`<div class="my-4"> 
+    $("#index-inicio").prepend(`<div class="my-4"> 
         <h3 class="text-center">DÓLAR</h3>
         <div id="index-dolar" class="d-flex flex-row flex-wrap justify-content-center"> </div>
     </div>`);
 
     for (let c of cot){
 
-        $("#index-dolar").append(`<div style="width:300px" class="card m-2"><h4 style="background-color:green" class="p-1">${c.casa.nombre}</h4>
+        $("#index-dolar").prepend(`<div style="width:300px" class="card m-2"><h4 style="background-color:green" class="p-1">${c.casa.nombre}</h4>
             <div class="bg-light">Compra: $ ${c.casa.compra}</div>
             <div class="bg-light">Venta: $ ${c.casa.venta}</div>
         </div>`);
     }
-
-    callback("letsbit","btc/ars", "0.2");
-    callback("letsbit","eth/ars", "0.2");
-    callback("letsbit","link/ars", "0.2");
-    callback("letsbit","usdt/ars", "0.2");
 };
 
 function cargarCripto(exchange, par, volumen){
@@ -66,30 +61,29 @@ function cargarCripto(exchange, par, volumen){
 function agregarCriptoAlDOM(c, nombre, color){
     
     if($("#index-cripto").length === 0){
-        $("#index-inicio").prepend(`<div class="my-4"> 
-            <h3 class="text-center">CRIPTO</h3>
+        $("#index-inicio").append(`<div class="my-4"> 
+            <h3 id="h3-cripto" class="text-center">CRIPTO</h3>
             <div id="index-cripto" class="d-flex flex-row flex-wrap justify-content-center"> </div>
         </div>`);
     }
 
-    $("#index-cripto").prepend(`<div style="width:300px" class="card m-2"><h4 style="background-color:${color}" class="p-1">${nombre}</h4>
+    $("#index-cripto").append(`<div style="width:300px" class="card m-2"><h4 style="background-color:${color}" class="p-1">${nombre}</h4>
         <div class="bg-light">Compra: $ ${c.totalAsk}</div>
         <div class="bg-light">Venta: $ ${c.totalBid}</div>
     </div>`);
 
 };
 
-function cargarPaginaInicio(){
+$(document).ready(() => {
     $("#navmenu").css("border-left","1rem solid yellow").css("font-weight","bold").css("color","black");
+    
+    cargarCripto("letsbit","btc/ars", "0.2");
+    cargarCripto("letsbit","eth/ars", "0.2");
+    cargarCripto("letsbit","link/ars", "0.2");
+    cargarCripto("letsbit","usdt/ars", "0.2");
 
-    cargarDolar(cargarCripto);
+    cargarDolar();        
+    
+});
 
-    // cargarCripto("letsbit","btc/ars", "0.2");
-    // cargarCripto("letsbit","eth/ars", "0.2");
-    // cargarCripto("letsbit","link/ars", "0.2");
-    // cargarCripto("letsbit","usdt/ars", "0.2");
-}
 
-// CODIGO
-//$(document).ready(cargarCripto("letsbit","btc/ars", "0.5"));
-$(document).ready(cargarPaginaInicio());

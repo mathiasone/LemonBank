@@ -42,19 +42,13 @@ export function cargarPrestamos(){
                 prestamosActivos.push(new Prestamo (p)); 
             }   
             
-            $("#prestamos").html(
-                "<div class='row bg-light mx-5 cabecera'>" + 
-                    "<div class='col-4'>Monto otorgado</div>" + 
-                    "<div class='col-4'>Cuotas pagas</div>" +
-                    "<div class='col-4'>Cuotas totales</div>" +
-                "</div>"
-                );
+            $("#prestamos").html("");
 
             prestamosActivos.forEach(e => e.imprimir());    
                 
             $("#prestamos").hide().slideDown(500, () =>{
-                $(".cabecera").animate({"font-size": "30px"},1500);
-                $(".fila-p").animate({"font-size": "30px"},1500)
+                $(".cabecera").animate({"font-size": "20px"},1500);
+                $(".fila-p").animate({"font-size": "20px"},1500)
                 .animate({"font-size": "16px"},1500);
             });
 
